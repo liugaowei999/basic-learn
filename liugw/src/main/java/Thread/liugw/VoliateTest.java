@@ -24,7 +24,7 @@ public class VoliateTest
 {
 	public volatile  static int count = 0;  
     
-    public void inc() 
+    public synchronized void inc() 
     {  
         //这里延迟5毫秒，使得结果明显  
         try 
@@ -44,12 +44,13 @@ public class VoliateTest
     {  
         final CountDownLatch latch = new CountDownLatch(1000);  
 //        final VoliateTest v1 = new VoliateTest(); // synchronized( this ) 测试
+        VoliateTest v1 = new VoliateTest();  
         //同时启动1000个线程，去进行i++计算，看看实际结果  
         for (int i = 0; i < 1000; i++) 
         {  
             new Thread(new Runnable() 
             {  
-            	VoliateTest v1 = new VoliateTest();  
+            	
 //                @Override  
                 public void run() 
                 {  
