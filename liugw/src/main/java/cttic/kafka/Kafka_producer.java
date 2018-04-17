@@ -21,7 +21,7 @@ public class Kafka_producer
         long begin = System.currentTimeMillis();   
         
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "192.168.1.22:9093");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);
@@ -35,9 +35,8 @@ public class Kafka_producer
         
 //        String topicnames = "my-partition-topic";
         String topicnames = "my-input-topic";
-        for(int i = 0; i <= 1000000; i++)
+        for(int i = 0; i <= 1000; i++)
         {
-        	
             producer.send(new ProducerRecord<String, String>(topicnames, 
             		      Integer.toString(i), 
             		      "["+ df.format(new Date()) +"]THis kdkdfkdjflafjdlfdjslajfdsaf  fkdsajflds kfdsakf message-"+Integer.toString(i))

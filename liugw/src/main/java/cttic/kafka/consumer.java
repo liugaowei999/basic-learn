@@ -19,6 +19,8 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.junit.Test;
+
 
 enum Type
 {
@@ -120,7 +122,7 @@ public class consumer
 					startValue = endValue;
 				}
 				
-//				System.out.printf("offset=%d, key=%s, value=%s \n", record.offset(), record.key(), record.value());
+				System.out.printf("offset=%d, key=%s, value=%s \n", record.offset(), record.key(), record.value());
 //				break;
 				if( batch_count > minBatchSize && !autoCommit)
 				{
@@ -171,20 +173,29 @@ public class consumer
 	     }
 	}
 	
+	@Test
+	public static void testFile(){
+	    java.io.File f = new java.io.File("d:\\aaaa\\bbb\\tt.txt");
+	    System.out.println(f.getAbsolutePath());
+	    System.out.println(f.getPath());
+	}
+	
 	
 	
 	
 	public static void main(String[] args)
 	{
-		Type enumType = Type.MANUALCOMMIT;
-		// 是否指定特定分区
-		boolean assignprt = false;
-		String topic_name = "my-input-topic";
-		consumer kafkaconsm = new consumer( enumType, assignprt,"consume_test_group","localhost:9092",topic_name );
-		kafkaconsm.set_log_mark("C1");
-		kafkaconsm.set_testStopFlag(true);
-		
-		kafkaconsm.doWork();
-//		kafkaconsm.workAsPartition();
+//		Type enumType = Type.MANUALCOMMIT;
+//		// 是否指定特定分区
+//		boolean assignprt = false;
+//		String topic_name = "my-input-topic";
+//		consumer kafkaconsm = new consumer( enumType, assignprt,"consume_test_group","192.168.1.22:9092",topic_name );
+//		kafkaconsm.set_log_mark("C1");
+//		kafkaconsm.set_testStopFlag(true);
+//		
+//		
+//		kafkaconsm.doWork();
+////		kafkaconsm.workAsPartition();
+	    testFile();
 	}
 }
