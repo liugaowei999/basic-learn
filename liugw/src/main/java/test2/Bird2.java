@@ -9,8 +9,8 @@ public class Bird2 extends Animal{
     public String getName(){
         this.name="bird";
         this.age=12;
-        this.gender="a";
-        this.type="b";
+//        this.gender="a";
+//        this.type="b";
         return name;
     }
 }
