@@ -1,8 +1,8 @@
-package com.cttic.liugw.design.duck.entity;
+package com.cttic.liugw.design.celve.entity;
 
-import com.cttic.liugw.design.duck.base.Duck;
-import com.cttic.liugw.design.duck.impl.FlyWithWings;
-import com.cttic.liugw.design.duck.impl.Quack;
+import com.cttic.liugw.design.celve.base.Duck;
+import com.cttic.liugw.design.celve.impl.FlyWithWings;
+import com.cttic.liugw.design.celve.impl.Quack;
 
 public class MallardDuck extends Duck{
     

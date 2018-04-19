@@ -1,6 +1,6 @@
-package com.cttic.liugw.design.duck.impl;
+package com.cttic.liugw.design.celve.impl;
 
-import com.cttic.liugw.design.duck.intf.QuackBehavior;
+import com.cttic.liugw.design.celve.intf.QuackBehavior;
 
 public class MuteQuack implements QuackBehavior{
 

@@ -1,7 +1,7 @@
-package com.cttic.liugw.design.duck.base;
+package com.cttic.liugw.design.celve.base;
 
-import com.cttic.liugw.design.duck.intf.FlyBehavior;
-import com.cttic.liugw.design.duck.intf.QuackBehavior;
+import com.cttic.liugw.design.celve.intf.FlyBehavior;
+import com.cttic.liugw.design.celve.intf.QuackBehavior;
 
 public abstract class Duck {
     protected FlyBehavior flyBehavior;
