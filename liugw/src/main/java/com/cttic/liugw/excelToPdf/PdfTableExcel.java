@@ -27,53 +27,59 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 
 public class PdfTableExcel {
-    //ExcelObject
+    // ExcelObject
     protected ExcelObject excelObject;
-    //excel
+    // excel
     protected Excel excel;
     //
     protected boolean setting = false;
-    
+
     /**
-     * <p>Description: Constructor</p>
+     * <p>
+     * Description: Constructor
+     * </p>
+     * 
      * @param excel
      */
-    public PdfTableExcel(ExcelObject excelObject){
+    public PdfTableExcel(ExcelObject excelObject) {
         this.excelObject = excelObject;
         this.excel = excelObject.getExcel();
     }
-    
+
     /**
-     * <p>Description: 获取转换过的Excel内容Table</p>
+     * <p>
+     * Description: 获取转换过的Excel内容Table
+     * </p>
+     * 
      * @return PdfPTable
      * @throws BadElementException
      * @throws MalformedURLException
      * @throws IOException
      */
-    public PdfPTable getTable() throws BadElementException, MalformedURLException, IOException{
+    public PdfPTable getTable() throws BadElementException, MalformedURLException, IOException {
         Sheet sheet = this.excel.getSheet();
         return toParseContent(sheet);
     }
-    
-    protected PdfPTable toParseContent(Sheet sheet) throws BadElementException, MalformedURLException, IOException{
+
+    protected PdfPTable toParseContent(Sheet sheet) throws BadElementException, MalformedURLException, IOException {
         int rowlength = sheet.getLastRowNum();
         List<PdfPCell> cells = new ArrayList<PdfPCell>();
         float[] widths = null;
         float mw = 0;
         for (int i = 0; i < rowlength; i++) {
             Row row = sheet.getRow(i);
-            if(row == null){
+            if (row == null) {
                 continue;
             }
-            System.out.println(row.getLastCellNum());
-            int lastCellNum = row.getLastCellNum()==-1?0:row.getLastCellNum();
-            System.out.println("lastCellNum="+lastCellNum);
+            // System.out.println(row.getLastCellNum());
+            int lastCellNum = row.getLastCellNum() == -1 ? 0 : row.getLastCellNum();
+            // System.out.println("lastCellNum="+lastCellNum);
             float[] cws = new float[lastCellNum];
             for (int j = 0; j < lastCellNum; j++) {
                 Cell cell = row.getCell(j);
                 float cw = getPOIColumnWidth(cell);
                 cws[cell.getColumnIndex()] = cw;
-                if(isUsed(cell.getColumnIndex(), row.getRowNum())){
+                if (isUsed(cell.getColumnIndex(), row.getRowNum())) {
                     continue;
                 }
                 cell.setCellType(Cell.CELL_TYPE_STRING);
@@ -85,7 +91,7 @@ public class PdfTableExcel {
                     rowspan = range.getLastRow() - range.getFirstRow() + 1;
                     colspan = range.getLastColumn() - range.getFirstColumn() + 1;
                 }
-                //PDF单元格
+                // PDF单元格
                 PdfPCell pdfpCell = new PdfPCell();
                 pdfpCell.setBackgroundColor(new BaseColor(getBackgroundColorByExcel(cell.getCellStyle())));
                 pdfpCell.setColspan(colspan);
@@ -95,7 +101,7 @@ public class PdfTableExcel {
                 pdfpCell.setPhrase(getPhrase(cell));
                 pdfpCell.setFixedHeight(this.getPixelHeight(row.getHeightInPoints()));
                 addBorderByExcel(pdfpCell, cell.getCellStyle());
-                addImageByPOICell(pdfpCell , cell , cw);
+                addImageByPOICell(pdfpCell, cell, cw);
                 //
                 cells.add(pdfpCell);
                 j += colspan - 1;
@@ -104,7 +110,7 @@ public class PdfTableExcel {
             for (int j = 0; j < cws.length; j++) {
                 rw += cws[j];
             }
-            if (rw > mw ||  mw == 0) {
+            if (rw > mw || mw == 0) {
                 widths = cws;
                 mw = rw;
             }
@@ -112,54 +118,58 @@ public class PdfTableExcel {
         //
         PdfPTable table = new PdfPTable(widths);
         table.setWidthPercentage(100);
-//        table.setLockedWidth(true);
+        // table.setLockedWidth(true);
         for (PdfPCell pdfpCell : cells) {
             table.addCell(pdfpCell);
         }
         return table;
     }
-    
-    protected Phrase getPhrase(Cell cell){
-        if(this.setting || this.excelObject.getAnchorName() == null){
-           return new Phrase(cell.getStringCellValue(), getFontByExcel(cell.getCellStyle()));
+
+    protected Phrase getPhrase(Cell cell) {
+        if (this.setting || this.excelObject.getAnchorName() == null) {
+            return new Phrase(cell.getStringCellValue(), getFontByExcel(cell.getCellStyle()));
         }
-        Anchor anchor = new Anchor(cell.getStringCellValue() , getFontByExcel(cell.getCellStyle()));
+        Anchor anchor = new Anchor(cell.getStringCellValue(), getFontByExcel(cell.getCellStyle()));
         anchor.setName(this.excelObject.getAnchorName());
         this.setting = true;
         return anchor;
     }
-    
-    protected void addImageByPOICell(PdfPCell pdfpCell , Cell cell , float cellWidth) throws BadElementException, MalformedURLException, IOException{
-       POIImage poiImage = new POIImage().getCellImage(cell);
-       byte[] bytes = poiImage.getBytes();
-       if(bytes != null){
-//           double cw = cellWidth;
-//           double ch = pdfpCell.getFixedHeight();
-//           
-//           double iw = poiImage.getDimension().getWidth();
-//           double ih = poiImage.getDimension().getHeight();
-//           
-//           double scale = cw / ch;
-//           
-//           double nw = iw * scale;
-//           double nh = ih - (iw - nw);
-//           
-//           POIUtil.scale(bytes , nw  , nh);
-           pdfpCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-           pdfpCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-           Image image = Image.getInstance(bytes);
-           pdfpCell.setImage(image);
-       }
+
+    protected void addImageByPOICell(PdfPCell pdfpCell, Cell cell, float cellWidth)
+            throws BadElementException, MalformedURLException, IOException {
+        POIImage poiImage = new POIImage().getCellImage(cell);
+        byte[] bytes = poiImage.getBytes();
+        if (bytes != null) {
+            // double cw = cellWidth;
+            // double ch = pdfpCell.getFixedHeight();
+            //
+            // double iw = poiImage.getDimension().getWidth();
+            // double ih = poiImage.getDimension().getHeight();
+            //
+            // double scale = cw / ch;
+            //
+            // double nw = iw * scale;
+            // double nh = ih - (iw - nw);
+            //
+            // POIUtil.scale(bytes , nw , nh);
+            pdfpCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            pdfpCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            Image image = Image.getInstance(bytes);
+            pdfpCell.setImage(image);
+        }
     }
-    
-    protected float getPixelHeight(float poiHeight){
+
+    protected float getPixelHeight(float poiHeight) {
         float pixel = poiHeight / 28.6f * 26f;
         return pixel;
     }
-    
+
     /**
-     * <p>Description: 此处获取Excel的列宽像素(无法精确实现,期待有能力的朋友进行改善此处)</p>
-     * @param cell 
+     * <p>
+     * Description: 此处获取Excel的列宽像素(无法精确实现,期待有能力的朋友进行改善此处)
+     * </p>
+     * 
+     * @param cell
      * @return 像素宽
      */
     protected int getPOIColumnWidth(Cell cell) {
@@ -173,7 +183,7 @@ public class PdfTableExcel {
         }
         return widthPixel;
     }
-    
+
     protected CellRangeAddress getColspanRowspanByExcel(int rowIndex, int colIndex) {
         CellRangeAddress result = null;
         Sheet sheet = excel.getSheet();
@@ -186,8 +196,8 @@ public class PdfTableExcel {
         }
         return result;
     }
-    
-    protected boolean isUsed(int colIndex , int rowIndex){
+
+    protected boolean isUsed(int colIndex, int rowIndex) {
         boolean result = false;
         Sheet sheet = excel.getSheet();
         int num = sheet.getNumMergedRegions();
@@ -198,7 +208,7 @@ public class PdfTableExcel {
             int firstColumn = range.getFirstColumn();
             int lastColumn = range.getLastColumn();
             if (firstRow < rowIndex && lastRow >= rowIndex) {
-                if(firstColumn <= colIndex && lastColumn >= colIndex){
+                if (firstColumn <= colIndex && lastColumn >= colIndex) {
                     result = true;
                 }
             }
@@ -207,43 +217,43 @@ public class PdfTableExcel {
     }
 
     protected Font getFontByExcel(CellStyle style) {
-       Font result = new Font(Resource.BASE_FONT_CHINESE , 8 , Font.NORMAL);
-       Workbook wb = excel.getWorkbook();
-       //字体样式索引
-       short index = style.getFontIndex();
-       org.apache.poi.ss.usermodel.Font font = wb.getFontAt(index);
-       //字体颜色
-       int colorIndex = font.getColor();
-       if(font.getBoldweight() == org.apache.poi.ss.usermodel.Font.BOLDWEIGHT_BOLD){
-           result.setStyle(Font.BOLD);
-       }
-       HSSFColor color = HSSFColor.getIndexHash().get(colorIndex);
-       if(color != null){
-           int rbg = POIUtil.getRGB(color);
-           result.setColor(new BaseColor(rbg));
-       }
-       //下划线
-       FontUnderline underline = FontUnderline.valueOf(font.getUnderline());
-       if(underline == FontUnderline.SINGLE){
-           String ulString = FontStyle.UNDERLINE.getValue();
-           result.setStyle(ulString);
-       }
-       return result;
+        Font result = new Font(Resource.BASE_FONT_CHINESE, 8, Font.NORMAL);
+        Workbook wb = excel.getWorkbook();
+        // 字体样式索引
+        short index = style.getFontIndex();
+        org.apache.poi.ss.usermodel.Font font = wb.getFontAt(index);
+        // 字体颜色
+        int colorIndex = font.getColor();
+        if (font.getBoldweight() == org.apache.poi.ss.usermodel.Font.BOLDWEIGHT_BOLD) {
+            result.setStyle(Font.BOLD);
+        }
+        HSSFColor color = HSSFColor.getIndexHash().get(colorIndex);
+        if (color != null) {
+            int rbg = POIUtil.getRGB(color);
+            result.setColor(new BaseColor(rbg));
+        }
+        // 下划线
+        FontUnderline underline = FontUnderline.valueOf(font.getUnderline());
+        if (underline == FontUnderline.SINGLE) {
+            String ulString = FontStyle.UNDERLINE.getValue();
+            result.setStyle(ulString);
+        }
+        return result;
     }
-    
+
     protected int getBackgroundColorByExcel(CellStyle style) {
         Color color = style.getFillForegroundColorColor();
         return POIUtil.getRGB(color);
     }
-    
-    protected void addBorderByExcel(PdfPCell cell , CellStyle style) {
+
+    protected void addBorderByExcel(PdfPCell cell, CellStyle style) {
         Workbook wb = excel.getWorkbook();
-        cell.setBorderColorLeft(new BaseColor(POIUtil.getBorderRBG(wb,style.getLeftBorderColor())));
-        cell.setBorderColorRight(new BaseColor(POIUtil.getBorderRBG(wb,style.getRightBorderColor())));
-        cell.setBorderColorTop(new BaseColor(POIUtil.getBorderRBG(wb,style.getTopBorderColor())));
-        cell.setBorderColorBottom(new BaseColor(POIUtil.getBorderRBG(wb,style.getBottomBorderColor())));
+        cell.setBorderColorLeft(new BaseColor(POIUtil.getBorderRBG(wb, style.getLeftBorderColor())));
+        cell.setBorderColorRight(new BaseColor(POIUtil.getBorderRBG(wb, style.getRightBorderColor())));
+        cell.setBorderColorTop(new BaseColor(POIUtil.getBorderRBG(wb, style.getTopBorderColor())));
+        cell.setBorderColorBottom(new BaseColor(POIUtil.getBorderRBG(wb, style.getBottomBorderColor())));
     }
-    
+
     protected int getVAlignByExcel(short align) {
         int result = 0;
         if (align == CellStyle.VERTICAL_BOTTOM) {
