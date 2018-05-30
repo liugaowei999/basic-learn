@@ -58,6 +58,8 @@ public class consumer {
             break;
         }
 
+        // 新建消费者组时，设置从最开始的位置消费消息：earliest； 设置只消费最新产生的消息：latest
+        props.put("auto.offset.reset", "earliest");
         props.put("auto.commit.interval.ms", "1000");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -73,7 +75,10 @@ public class consumer {
             // 制定分区的偏移量
             kafkaConsumer.seek(partition0, 1);
         } else {
-            kafkaConsumer.subscribe(Arrays.asList(m_topicnames));
+            //            kafkaConsumer.subscribe(Arrays.asList(m_topicnames));
+            TopicPartition partition0 = new TopicPartition(m_topicnames, 0);
+            kafkaConsumer.assign(Arrays.asList(partition0));
+            //            kafkaConsumer.seek(partition0, 1);
         }
     }
 
@@ -114,7 +119,7 @@ public class consumer {
             end = System.currentTimeMillis();
             System.out.println("Consumber do_work 执行耗时:" + (end - begin) + " 豪秒, totalCount=[" + totalCount + "]");
             begin = end;
-            if (totalCount > 100000 && testStopFlag) {
+            if (totalCount > 1000000 && testStopFlag) {
                 System.out.println(log_mark + " exit!");
                 kafkaConsumer.close();
                 System.exit(0);
@@ -143,24 +148,17 @@ public class consumer {
         }
     }
 
-    public static void testFile() {
-        java.io.File f = new java.io.File("d:\\aaaa\\bbb\\tt.txt");
-        System.out.println(f.getAbsolutePath());
-        System.out.println(f.getPath());
-    }
-
     public static void main(String[] args) {
-        //		Type enumType = Type.MANUALCOMMIT;
-        //		// 是否指定特定分区
-        //		boolean assignprt = false;
-        //		String topic_name = "my-input-topic";
-        //		consumer kafkaconsm = new consumer( enumType, assignprt,"consume_test_group","192.168.1.22:9092",topic_name );
-        //		kafkaconsm.set_log_mark("C1");
-        //		kafkaconsm.set_testStopFlag(true);
-        //		
-        //		
-        //		kafkaconsm.doWork();
-        ////		kafkaconsm.workAsPartition();
-        testFile();
+        Type enumType = Type.AUTOCOMMIT;
+        // 是否指定特定分区
+        boolean assignprt = false;
+        String topic_name = "xjphonedata";
+        consumer kafkaconsm = new consumer(enumType, assignprt, "llll", "117.107.169.48:9092",
+                topic_name);
+        kafkaconsm.set_log_mark("C1");
+        kafkaconsm.set_testStopFlag(true);
+
+        kafkaconsm.doWork();
+        //		kafkaconsm.workAsPartition();
     }
 }

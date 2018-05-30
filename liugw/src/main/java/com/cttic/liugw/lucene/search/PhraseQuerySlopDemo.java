@@ -26,8 +26,11 @@ public class PhraseQuerySlopDemo {
     public static void main(String[] args) throws IOException, ParseException {
         // 使用的分词器
         Analyzer analyzer = new IKAnalyzer4Lucene7(true);
+        if (Boolean.TRUE) {
+
+        }
         // 索引存储目录
-        Directory directory = FSDirectory.open(Paths.get("d:/tmp/export"));
+        Directory directory = FSDirectory.open(Paths.get("d:/tmp/index"));
         // 索引读取器
         IndexReader indexReader = DirectoryReader.open(directory);
         // 索引搜索器

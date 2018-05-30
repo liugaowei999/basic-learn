@@ -27,14 +27,14 @@ public class PointQueryDemo {
         // 使用的分词器
         Analyzer analyzer = new IKAnalyzer4Lucene7(true);
         // 索引存储目录
-        Directory directory = FSDirectory.open(Paths.get("f:/test/indextest"));
+        Directory directory = FSDirectory.open(Paths.get("d:/tmp/index"));
         // 索引读取器
         IndexReader indexReader = DirectoryReader.open(directory);
         // 索引搜索器
         IndexSearcher indexSearcher = new IndexSearcher(indexReader);
 
         // 精确值查询
-        Query exactQuery = IntPoint.newExactQuery("price", 1999900);
+        Query exactQuery = IntPoint.newExactQuery("price", 999);
         System.out.println("********** pointRangeQuery 数值精确查询  ***********");
         doSearch(exactQuery, indexSearcher);
 
