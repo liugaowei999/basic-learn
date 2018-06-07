@@ -236,6 +236,20 @@
 	    <version>1.33</version>  
 	</dependency>  
 	<!-- Java 防盗版，证书认证 结束-->
+	
+	<!-- 字节码操作 ASM工具包 -->
+	<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
+	<dependency>
+	    <groupId>org.ow2.asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>6.1</version>
+	</dependency>
+	
+	<!-- <dependency>  
+	    <groupId>org.ow2.asm</groupId>  
+	    <artifactId>asm-all</artifactId>  
+	    <version>5.1</version>  
+	</dependency>   -->
 
   </dependencies>
 </project>
