@@ -1,4 +1,4 @@
-package ordinary;
+package com.cttic.liugw.ordinary;
 
 import java.util.*;
 

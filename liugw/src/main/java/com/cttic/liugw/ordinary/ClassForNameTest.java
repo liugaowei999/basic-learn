@@ -1,4 +1,4 @@
-package ordinary;
+package com.cttic.liugw.ordinary;
 
 class TestClass1{
     private static String aaa;

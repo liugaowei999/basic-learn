@@ -1,4 +1,4 @@
-package ordinary;
+package com.cttic.liugw.ordinary;
 
 import java.io.IOException;
 import java.lang.reflect.Method;

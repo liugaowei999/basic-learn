@@ -1,4 +1,4 @@
-package ordinary;
+package com.cttic.liugw.ordinary;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -57,10 +57,10 @@ public class ClassReloader extends ClassLoader {
             Object aa = rClass2.newInstance();
             Object aa2 = rClass2.newInstance();
             System.out.println(rClass2.getName() + "--| " + aa);
-            System.out.println(aa instanceof ordinary.AA);
+            System.out.println(aa instanceof AA);
 
             AA bb = new AA();
-            System.out.println(bb instanceof ordinary.AA);
+            System.out.println(bb instanceof AA);
 
             System.out.println("rClass.getClassLoader()              === " + rClass.getClassLoader());
             System.out.println("rClass2.getClassLoader()             === " + rClass2.getClassLoader());
