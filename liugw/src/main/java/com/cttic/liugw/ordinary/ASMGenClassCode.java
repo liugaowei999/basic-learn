@@ -152,6 +152,7 @@ public class ASMGenClassCode {
         Object value = clazz.getMethods()[1].invoke(clazz.newInstance());
         System.out.println(value);
         System.out.println("-============================ mark7");
+        System.out.println(String.class.getClassLoader());
     }
 }
 
