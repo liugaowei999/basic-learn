@@ -1,4 +1,4 @@
-package com.cttic.liugw.ordinary;
+package com.cttic.liugw.ordinary.asmtest;
 
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
