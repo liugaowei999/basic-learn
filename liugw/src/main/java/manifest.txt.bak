@@ -1,0 +1,4 @@
+Manifest-version: 1.0
+Premain-Class: com.cttic.liugw.ordinary.javaAgent.PreMainTraceAgent
+Can-Redine-Classes: true
+Can-Retransform-Classes: true

@@ -59,6 +59,24 @@ public class TimeStatWeaveGenerator {
     }
 
     /**
+     * 直接返回 织入新代码后的 新类的字节码数据
+     * 
+     * @param oldClazzData : 原始的class 文件字节码
+     * @return byte[] ： 修改后的类字节码数据
+     * @throws IOException
+     */
+    public static byte[] reGenClazzClassData(byte[] oldClazzData) {
+
+        ClassReader classReader = new ClassReader(oldClazzData);
+        ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
+
+        TimeStatClassAdapter classAdapter = new TimeStatClassAdapter(classWriter);
+        classReader.accept(classAdapter, ClassReader.SKIP_DEBUG);
+
+        return classWriter.toByteArray();
+    }
+
+    /**
      * 运行测试
      */
     public static void main(String[] args) throws IOException {
