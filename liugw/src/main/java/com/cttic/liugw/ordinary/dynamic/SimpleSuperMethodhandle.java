@@ -37,7 +37,10 @@ public class SimpleSuperMethodhandle {
         System.out.println(simpleSuperMethodhandle.callToString());
         System.out.println(simpleSuperMethodhandle.callToString(simpleSuperMethodhandle));
 
-        System.out.println(simpleSuperMethodhandle.callToString(man));
+        // 从simpleSuperMethodhandle类中调用man的ToString方法，没有访问权限, 下面这句是执行不了的
+        // System.out.println("simpleSuperMethodhandle man:" + simpleSuperMethodhandle.callToString(man));
+
+        System.out.println("man:" + man.callToString());
     }
 }
 
@@ -54,5 +57,14 @@ class Man extends Human {
     @Override
     public String toString() {
         return "man Object toString.";
+    }
+
+    public String callToString() throws Throwable {
+        //System.out.println(obj.toString());
+        //        MethodHandle methodHandle = MethodHandles.lookup().findSpecial(object.getClass().getSuperclass(), "toString",
+        //                MethodType.methodType(String.class), object.getClass()).bindTo(object);
+        MethodHandle methodHandle = MethodHandles.lookup().findSpecial(this.getClass().getSuperclass(), "toString",
+                MethodType.methodType(String.class), this.getClass()).bindTo(this);
+        return (String) methodHandle.invokeExact();
     }
 }

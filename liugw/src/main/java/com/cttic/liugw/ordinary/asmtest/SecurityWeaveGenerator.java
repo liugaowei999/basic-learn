@@ -78,7 +78,7 @@ public class SecurityWeaveGenerator {
 class AddSecurityCheckClassAdapter extends ClassVisitor {
 
     public AddSecurityCheckClassAdapter(ClassVisitor classVisitor) {
-        super(Opcodes.ASM5, classVisitor);
+        super(Opcodes.ASM4, classVisitor);
         // TODO Auto-generated constructor stub
     }
 
@@ -103,7 +103,7 @@ class AddSecurityCheckMethodAdapter extends MethodVisitor {
     static String securityCheckerClassName = SecurityChecker.class.getName();
 
     public AddSecurityCheckMethodAdapter(MethodVisitor classVisitor) {
-        super(Opcodes.ASM5, classVisitor);
+        super(Opcodes.ASM4, classVisitor);
         // TODO Auto-generated constructor stub
     }
 

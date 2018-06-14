@@ -93,7 +93,7 @@ public class TimeStatWeaveGenerator {
 class TimeStatClassAdapter extends ClassVisitor {
 
     public TimeStatClassAdapter(ClassVisitor classVisitor) {
-        super(Opcodes.ASM5, classVisitor);
+        super(Opcodes.ASM4, classVisitor);
         // TODO Auto-generated constructor stub
     }
 
@@ -118,7 +118,7 @@ class TimeStatMethodAdapter extends MethodVisitor implements Opcodes {
     static String timeStatClassName = TimeStat.class.getName();
 
     public TimeStatMethodAdapter(MethodVisitor classVisitor) {
-        super(Opcodes.ASM5, classVisitor);
+        super(Opcodes.ASM4, classVisitor);
         // TODO Auto-generated constructor stub
     }
 
