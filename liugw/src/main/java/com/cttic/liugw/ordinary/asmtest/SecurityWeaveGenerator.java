@@ -67,7 +67,7 @@ public class SecurityWeaveGenerator {
 
     public static void main(String[] args) throws IOException {
         // 执行一次即可， 反复执行 Account 字节码中会重复写入 checkSecurity 方法的调用
-        //reGenAccountClass();
+        //        reGenAccountClass();
 
         // 执行测试
         Account account = new Account();
@@ -119,6 +119,7 @@ class AddSecurityCheckMethodAdapter extends MethodVisitor {
         visitMethodInsn(Opcodes.INVOKESTATIC, securityCheckerClassName.replaceAll("\\.", "/"), "checkSecurity",
                 "()Z");
         visitJumpInsn(Opcodes.IFNE, continueLabel);
+        visitInsn(Opcodes.RETURN);
         visitLabel(continueLabel);
         super.visitCode();
 

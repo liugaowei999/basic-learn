@@ -239,11 +239,11 @@
 	
 	<!-- 字节码操作 ASM工具包 asm-all包没有6.1 -->
 	<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
-	<!-- <dependency>
+	<dependency>
 	    <groupId>org.ow2.asm</groupId>
 	    <artifactId>asm</artifactId>
 	    <version>6.1</version>
-	</dependency> -->
+	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-all -->
 	<dependency>
