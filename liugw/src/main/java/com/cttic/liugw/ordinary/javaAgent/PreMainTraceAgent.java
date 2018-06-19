@@ -15,6 +15,11 @@ public class PreMainTraceAgent {
      * 该方法会在main方法执行前调用
      * 在JVM加载类文件之前， 修改类的字节码
      * 
+     * 在 Java 虚拟机启动之时加载的，这个加载处于虚拟机初始化的早期，在这个时间点上：
+     *      所有的 Java 类都未被初始化；
+     *      所有的对象实例都未被创建；
+     *      因而，没有任何 Java 代码被执行；
+     * 
      * @param agentArgs
      * @param inst
      */
