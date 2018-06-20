@@ -251,6 +251,24 @@
 	    <artifactId>asm-all</artifactId>
 	    <version>5.2</version>
 	</dependency>
+	
+	<!-- 一个表达式计算的开源包， 自动将表达式转化为字节码让JVM执行 
+	     aviator 4.0 开始支持 以分号分割的多行表达式
+	-->
+	<!-- https://mvnrepository.com/artifact/com.googlecode.aviator/aviator -->
+	<!-- <dependency>
+	    <groupId>com.googlecode.aviator</groupId>
+	    <artifactId>aviator</artifactId>
+	    <version>3.3.0</version>
+	</dependency> -->
+	<!-- https://mvnrepository.com/artifact/com.googlecode.aviator/aviator -->
+	<dependency>
+	    <groupId>com.googlecode.aviator</groupId>
+	    <artifactId>aviator</artifactId>
+	    <version>4.0.0-RC</version>
+	</dependency>
+	
+		
 
 
   </dependencies>
