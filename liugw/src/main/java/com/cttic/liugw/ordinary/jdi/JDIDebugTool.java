@@ -9,7 +9,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cttic.cell.phone.signal.tasks.DataConvertTask;
 import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.ArrayReference;
 import com.sun.jdi.BooleanValue;
@@ -268,10 +267,10 @@ public class JDIDebugTool {
     }
 
     public static void main(String[] args) throws Exception {
-        //        JDIDebugTool debugTool = new JDIDebugTool("127.0.0.1", 5005);
-        //        debugTool.makeBreakPoint(MyAppProcess.class, 25);
-        JDIDebugTool debugTool = new JDIDebugTool("192.168.1.22", 5005);
-        debugTool.makeBreakPoint(DataConvertTask.class, 328);
+        JDIDebugTool debugTool = new JDIDebugTool("127.0.0.1", 5005);
+        debugTool.makeBreakPoint(MyAppProcess.class, 36);
+        //JDIDebugTool debugTool = new JDIDebugTool("192.168.1.22", 5005);
+        //debugTool.makeBreakPoint(DataConvertTask.class, 328);
         debugTool.traceBreakpoint();
     }
 
