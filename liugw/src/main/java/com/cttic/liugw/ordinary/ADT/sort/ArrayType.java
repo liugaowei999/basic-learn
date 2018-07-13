@@ -23,6 +23,7 @@ public class ArrayType {
     }
 
     /**
+     * 稳定的，就地得
      * 冒泡排序， 比较次数 和 移动元素的 时间复杂度都是 N*N
      */
     public void bubbleSort() {
@@ -39,6 +40,8 @@ public class ArrayType {
     }
 
     /**
+     * 稳定的，就地得
+     * 将移动元素的次数降到了最低
      * 选择排序, 比较次数时间复杂度还是 N*N, 但将移动元素的时间复杂度降为了N
      */
     public void selectSort() {
@@ -58,6 +61,12 @@ public class ArrayType {
         System.out.println("选择排序耗时:" + (System.nanoTime() - begin));
     }
 
+    /**
+     * 稳定的，就地得
+     * 适合少量数据和基本有序的数据
+     * 比较次数时间复杂度还是 N*N, 但将移动元素的操作改为了复制(一次交换要做3次复制)， 复制的复杂度是 N*N
+     * 最好的情况下只需要比较N次 ， O(N)
+     */
     public void insertSort() {
         long begin = System.nanoTime();
         int out, in;
@@ -65,7 +74,7 @@ public class ArrayType {
             in = out;
             long temp = a[out];
             while (in > 0 && a[in - 1] > temp) {
-                a[in] = a[in - 1];
+                a[in] = a[in - 1]; // 只需要做一次复制， 不需要swap
                 --in;
             }
             a[in] = temp;
