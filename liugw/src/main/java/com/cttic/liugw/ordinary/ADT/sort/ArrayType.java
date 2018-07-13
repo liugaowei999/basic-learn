@@ -32,7 +32,24 @@ public class ArrayType {
                 }
             }
         }
-        System.out.println("耗时:" + (System.currentTimeMillis() - begin));
+        System.out.println("冒泡排序耗时:" + (System.currentTimeMillis() - begin));
+    }
+
+    public void selectSort() {
+        long begin = System.currentTimeMillis();
+        int out, in, min;
+        for (out = 0; out < nCount; out++) {
+            min = out;
+            for (in = out + 1; in < nCount; in++) {
+                if (a[out] > a[in]) {
+                    min = in;
+                }
+            }
+            if (min != out) {
+                swap(out, min);
+            }
+        }
+        System.out.println("选择排序耗时:" + (System.currentTimeMillis() - begin));
     }
 
     private void swap(int l, int m) {
