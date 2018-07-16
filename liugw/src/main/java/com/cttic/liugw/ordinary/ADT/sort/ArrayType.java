@@ -82,6 +82,63 @@ public class ArrayType {
         System.out.println("插入排序耗时:" + (System.nanoTime() - begin));
     }
 
+    /**
+     * 归并排序， 时间复杂度：O(N * logN)
+     * // 10万条 0.35秒 是 选择，插入的 125倍
+     */
+    public void mergeSort() {
+        long begin = System.nanoTime();
+        long begin1 = System.currentTimeMillis();
+        long[] workSpace = new long[nCount];
+        recMergeSort(workSpace, 0, nCount - 1);
+        System.out.println("归并排序耗时:" + (System.nanoTime() - begin) + ", mill:" + (System.currentTimeMillis() - begin1));
+    }
+
+    //    public int totalcount = 0;
+
+    private void recMergeSort(long[] workSpace, int start, int end) {
+        // 当切分的只剩下一个元素时， 此时不用排序了
+        if (start == end) {
+            return;
+        } else {
+            int mid = (start + end) / 2;
+
+            recMergeSort(workSpace, start, mid);
+            recMergeSort(workSpace, mid + 1, end);
+            merge(workSpace, start, mid + 1, end);
+        }
+    }
+
+    private void merge(long[] workSpace, int lstart, int hstart, int end) {
+        int idx = 0;
+        int segment_start = lstart;
+        int mid = hstart - 1;
+        int count = end - lstart + 1;
+        //        totalcount++;
+
+        while (lstart <= mid && hstart <= end) {
+            if (a[lstart] < a[hstart]) {
+                workSpace[idx++] = a[lstart++];
+            } else {
+                workSpace[idx++] = a[hstart++];
+            }
+        }
+
+        while (lstart <= mid) {
+            workSpace[idx++] = a[lstart++];
+        }
+
+        while (hstart <= end) {
+            workSpace[idx++] = a[hstart++];
+        }
+
+        // 更新原始数组对应位置的元素为排好序的结果
+        for (idx = 0; idx < count; idx++) {
+            a[segment_start + idx] = workSpace[idx];
+        }
+
+    }
+
     private void swap(int l, int m) {
         long temp = a[l];
         a[l] = a[m];

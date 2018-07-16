@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class SortTest {
     public static ArrayType array;
-    private static final int SIZE = 10;
 
     static {
         //        array = new ArrayType(SIZE);
@@ -25,18 +24,24 @@ public class SortTest {
         return array;
     }
 
+    private static final int SIZE = 100000;
+
     public static void main(String[] args) {
         ArrayType a = getArray();
-        ArrayType b = getArray();
+        //        ArrayType b = getArray();
         ArrayType c = getArray();
+        ArrayType m = getArray();
         System.out.println("开始排序");
 
-        b.bubbleSort();
+        //        b.bubbleSort();
         a.selectSort();
         c.insertSort();
+        m.mergeSort();
         //        a.display();
         //        b.display();
-        c.display();
+        //        m.display();
+        //        m.selectSort();
+        //        m.display();
     }
 
 }
