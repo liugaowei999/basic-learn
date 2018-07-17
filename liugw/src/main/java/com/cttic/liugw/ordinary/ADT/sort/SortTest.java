@@ -24,11 +24,12 @@ public class SortTest {
         return array;
     }
 
-    private static final int SIZE = 100000;
+    private static final int SIZE = 1000000;
 
     public static void main(String[] args) {
         ArrayType a = getArray();
-        //        ArrayType b = getArray();
+        ArrayType b = getArray();
+        b.display();
         ArrayType c = getArray();
         ArrayType m = getArray();
         System.out.println("开始排序");
@@ -37,8 +38,9 @@ public class SortTest {
         a.selectSort();
         c.insertSort();
         m.mergeSort();
+        b.shellSort();
         //        a.display();
-        //        b.display();
+        b.display();
         //        m.display();
         //        m.selectSort();
         //        m.display();
