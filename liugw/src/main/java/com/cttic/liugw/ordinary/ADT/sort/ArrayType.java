@@ -85,8 +85,22 @@ public class ArrayType {
         System.out.println("插入排序耗时:" + (System.nanoTime() - begin) / 1000000 + "ms");
     }
 
+    public void insertSort(int left, int right) {
+        int out, in;
+        for (out = left + 1; out <= right; out++) {
+            in = out;
+            long temp = a[out];
+            while (in > left && a[in - 1] > temp) {
+                a[in] = a[in - 1]; // 只需要做一次复制， 不需要swap
+                --in;
+            }
+            a[in] = temp;
+        }
+    }
+
     /**
      * 希尔排序 -- 基于插入排序的优化
+     * 时间复杂度 很难评估
      * 希尔排序通过加大插入排序中的元素之间的间隔，并在这些有间隔的元素中进行插入排序，从而使数据项能大跨度
      * 的移动。
      * 
@@ -183,26 +197,46 @@ public class ArrayType {
 
     /**
      * ===============================================================================================
-     * 快速排序
+     * 快速排序， 原地排序，空间复杂度O(1)
+     * 时间复杂度：O(N * logN)
+     * 最坏情况可能降为 N*N (每次排序的那部分都是有序的情景）
      * ===============================================================================================
      */
 
     /**
+     * pivotSelectImprov: 是否优化选择枢轴元素的算法
+     * 优化算法： 选择两头和中间位置的元素， 取中间值的元素 放在 最右端。
+     * 优化后： 对随机序列排序没有明显的优势。 但是对基本有序的序列 很有优势。 总体来说：算法复杂度比较稳定。
+     * 未优化算法如果排序 已经有序的序列，会事算法复杂度降为 N的平方。 因为每次partition只会分开一个元素，
+     * 递归调用很容易 StackOverflowError。
      * 
+     * @param pivotSelectImprov
      */
-    public void quickSort() {
-        recQuickSort(0, nCount - 1);
+    public void quickSort(boolean pivotSelectImprov) {
+        long begin = System.nanoTime();
+        recQuickSort(0, nCount - 1, pivotSelectImprov);
+        System.out.println("快速排序耗时:" + (System.nanoTime() - begin) / 1000000 + "ms");
     }
 
-    private void recQuickSort(int left, int right) {
-        if (right - left <= 0) {
-            return;
+    private void recQuickSort(int left, int right, boolean pivotSelectImprov) {
+        // 进一步优化快速排序： 当剩余的元素小于一定个数时，使用插入排序或者蛮力排序
+        int size = right - left + 1;
+        //if (right - left <= 0) {
+        //    return;
+        if (size < 10) {
+            insertSort(left, right);
+        } else if (size <= 3) {
+            manualSort(left, right);
         } else {
+
+            if (pivotSelectImprov) {
+                selectPivot(left, right);
+            }
             // 选择枢轴
             long pivot = a[right];
             int partionPos = doPartion(left, right, pivot);
-            recQuickSort(left, partionPos - 1);
-            recQuickSort(partionPos + 1, right);
+            recQuickSort(left, partionPos - 1, pivotSelectImprov);
+            recQuickSort(partionPos + 1, right, pivotSelectImprov);
         }
 
     }
@@ -228,6 +262,49 @@ public class ArrayType {
         return leftPtr;
     }
 
+    private void manualSort(int left, int right) {
+        int size = right - left + 1;
+        //        System.out.println(right + ", " + left);
+        if (size <= 1) {
+            return; // 1个元素时认为是有序的
+        } else if (size == 2) {
+            if (a[left] > a[right]) {
+                swap(left, right);
+            }
+        } else {
+            if (a[left] > a[right - 1]) {
+                swap(left, right - 1);
+            }
+
+            if (a[left] > a[right]) {
+                swap(left, right);
+            }
+
+            if (a[right - 1] > a[right]) {
+                swap(right - 1, right);
+            }
+        }
+
+    }
+
+    /**
+     * 取3个数， 将中间值放在 最右边的位置
+     * @param left
+     * @param right
+     */
+    private void selectPivot(int left, int right) {
+        // 数据量少时，直接取右边的
+        if (right < 5) {
+            return;
+        }
+        int mid = (left + right) / 2;
+        if ((a[left] <= a[mid] && a[mid] <= a[right]) || (a[right] <= a[mid] && a[mid] <= a[left])) {
+            swap(mid, right);
+        } else if ((a[mid] <= a[left] && a[left] <= a[right]) || (a[right] <= a[left] && a[left] <= a[mid])) {
+            swap(left, right);
+        }
+    }
+
     /**
      * ===============================================================================================
      * ===============================================================================================
@@ -237,5 +314,18 @@ public class ArrayType {
         a[l] = a[m];
         a[m] = temp;
     }
+
+    /**
+     * ===============================================================================================
+     * 基数排序
+     * 需要额外一倍的存储空间。 是快速排序空间的2倍， 算法复杂度差不多 N*logN
+     * 对整个序列， 先排个位， 再排十位 ->百位 ->千位.................
+     * 101 252 120 312 ===> 开始
+     * -> 120 101 252 312  ---> 按个位排序
+     * -> 101 312 120 252  ---> 对按个位排序后的结果，再按十位排序
+     * -> 101 120 252 312  ---> 对按十位排序后的结果，再按百位排序
+     *                 ===> 结束
+     * ===============================================================================================
+     */
 
 }

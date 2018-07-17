@@ -24,23 +24,27 @@ public class SortTest {
         return array;
     }
 
-    private static final int SIZE = 1000000;
+    private static final int SIZE = 11;
 
     public static void main(String[] args) {
         ArrayType a = getArray();
         ArrayType b = getArray();
-        b.display();
+        //        b.display();
         ArrayType c = getArray();
         ArrayType m = getArray();
+        ArrayType q = getArray();
+        q.display();
         System.out.println("开始排序");
 
         //        b.bubbleSort();
-        a.selectSort();
-        c.insertSort();
+        //a.selectSort();
+        //c.insertSort();
         m.mergeSort();
-        b.shellSort();
+        //b.shellSort();
+        q.quickSort(true);
+        b.quickSort(false);
         //        a.display();
-        b.display();
+        q.display();
         //        m.display();
         //        m.selectSort();
         //        m.display();
