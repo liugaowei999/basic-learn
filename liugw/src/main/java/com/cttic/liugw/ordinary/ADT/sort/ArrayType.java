@@ -314,6 +314,14 @@ public class ArrayType {
         a[l] = a[m];
         a[m] = temp;
     }
+    
+    public long get(int index){
+    	return a[index];
+    }
+    
+    public void set(int index,long value){
+    	 a[index] = value;
+    }
 
     /**
      * ===============================================================================================

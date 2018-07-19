@@ -27,7 +27,7 @@ public class SortTest {
     private static final int SIZE = 11;
 
     public static void main(String[] args) {
-        int aa = 11, bb = 12;
+        long aa = 11, bb = 12;
         System.out.println("aa=" + aa + ",bb=" + bb);
         aa ^= bb;
         bb ^= aa;
