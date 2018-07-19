@@ -1,4 +1,4 @@
-package com.cttic.liugw.ordinary.ADT.tree;
+package com.cttic.liugw.ordinary.ADT.btree;
 
 import java.util.Stack;
 
