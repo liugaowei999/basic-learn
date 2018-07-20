@@ -225,5 +225,7 @@ public class Base64Test {
         // 使用流的方式 - 将文本的txt文件 ， 还原为图片二进制文件
         transTxtToImageWrap("d:/307944_3.txt", "d:/307944_3.jpg");
 
+        //transTxtToImageWrap("d:/img.txt", "d:/img_8.jpg");
+
     }
 }
