@@ -44,6 +44,7 @@ public class StreamTest {
     }
 
     public static void main(String[] args) throws Exception {
+
         Stream.of("a", "bdf", "d").forEach(System.out::println);
         Stream<String> empty = Stream.empty();
 
@@ -70,5 +71,16 @@ public class StreamTest {
         }
 
     }
+
+    //    @Override
+    //    public void start(Stage stage) throws Exception {
+    //        Label label = new Label("xxxxxxxxxxxxdddd");
+    //        label.setFont(new Font(100));
+    //
+    //        stage.setScene(new Scene(label));
+    //        stage.setTitle("hello");
+    //        stage.show();
+    //
+    //    }
 
 }

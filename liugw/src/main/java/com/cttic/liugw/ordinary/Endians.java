@@ -9,8 +9,6 @@ import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Properties;
 import java.util.TreeSet;
 
@@ -27,6 +25,11 @@ import java.util.TreeSet;
  *        另一种方法是将高序字节存储在起始地址，这称为大端(big-endian)字节序。
  *          
  * 在网络上必须采用网络字节顺序，也就是大端模式。
+ * 
+ * 32位的数值类型（8进制）：0X12345678
+ * 大端模式：12 34 56 78
+ * 小端模式：78 56 34 12
+ * 
  */
 
 /**
@@ -55,8 +58,8 @@ public class Endians implements Serializable {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = new LinkedList<>();
-        list.get(1);
+        //        List<Integer> list = new LinkedList<>();
+        //        list.get(1);
 
         TreeSet<Integer> set = new TreeSet<>();
         Iterator<Integer> iterator = set.descendingIterator();
@@ -88,6 +91,12 @@ public class Endians implements Serializable {
         bb.order(ByteOrder.LITTLE_ENDIAN);
         bb.asCharBuffer().put("abcdef");
         System.out.println(Arrays.toString(bb.array()));
+
+        //        IntBuffer intBuffer = IntBuffer.wrap(new int[10]);
+        //        intBuffer.rewind();
+        //        //intBuffer.order();
+        //        intBuffer.put(10000000);
+        //        System.out.println(Arrays.toString(intBuffer.array()));
 
         testCPU();
     }
