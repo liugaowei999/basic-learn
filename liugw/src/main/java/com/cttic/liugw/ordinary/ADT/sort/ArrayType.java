@@ -1,5 +1,7 @@
 package com.cttic.liugw.ordinary.ADT.sort;
 
+import java.util.Arrays;
+
 public class ArrayType {
 
     private long[] a;
@@ -148,6 +150,14 @@ public class ArrayType {
         recMergeSort(workSpace, 0, nCount - 1);
         System.out.println(
                 "归并排序耗时:" + (System.currentTimeMillis() - begin1) + "ms");
+    }
+
+    public void timSort() {
+        long begin = System.nanoTime();
+        long begin1 = System.currentTimeMillis();
+        Arrays.sort(a);
+        System.out.println(
+                "自适应归并排序TimSort耗时:" + (System.currentTimeMillis() - begin1) + "ms");
     }
 
     //    public int totalcount = 0;
@@ -314,13 +324,13 @@ public class ArrayType {
         a[l] = a[m];
         a[m] = temp;
     }
-    
-    public long get(int index){
-    	return a[index];
+
+    public long get(int index) {
+        return a[index];
     }
-    
-    public void set(int index,long value){
-    	 a[index] = value;
+
+    public void set(int index, long value) {
+        a[index] = value;
     }
 
     /**
