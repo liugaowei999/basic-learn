@@ -119,6 +119,7 @@ public class QuickStartJavaDocTest {
             @Override
             public void apply(Document t) {
                 logger.info(t.toJson());
+                System.out.println(t.toJson());
                 ret.add(t);
             }
 
@@ -127,6 +128,7 @@ public class QuickStartJavaDocTest {
         FindIterable<Document> find = doc.find(all("favorites.cites", Arrays.asList("东莞", "东京")));
         find.forEach(printBlock);
         logger.info(String.valueOf(ret.size()));
+        System.out.println(String.valueOf(ret.size()));
         ret.removeAll(ret);
 
         //select * from users  where username like '%s%' and (contry= English or contry = USA)
@@ -136,6 +138,7 @@ public class QuickStartJavaDocTest {
         FindIterable<Document> find2 = doc.find(and(regex, or));
         find2.forEach(printBlock);
         logger.info(String.valueOf(ret.size()));
+        System.out.println(String.valueOf(ret.size()));
 
     }
 
