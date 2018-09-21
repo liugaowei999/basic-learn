@@ -1,6 +1,0 @@
-// 授权工程 A 执行文件路径中文件在本目录中的写文件权限
- grant CodeBase "file:E:/git/basic-learn/liugw/target/classes/com/cttic/liugw/ordinary/AccessController"
- { 
-  permission java.io.FilePermission 
-    "E:\\git\\basic-learn\\liugw\\target\\classes\\com\\cttic\\liugw\\ordinary\\AccessController\\*", "write"; 
- };

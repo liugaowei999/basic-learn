@@ -268,7 +268,13 @@
 	    <version>4.0.0-RC</version>
 	</dependency>
 	
-		
+    <!-- mongodb 原生API -->
+    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+    <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongo-java-driver</artifactId>
+        <version>3.5.0</version>
+    </dependency>
 
 
   </dependencies>
