@@ -1,6 +1,7 @@
 /target/
 
 /.settings/
+*/.idea/*
 .classpath
 .project
 zookeeper.log
