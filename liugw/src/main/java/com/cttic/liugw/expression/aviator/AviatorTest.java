@@ -1,5 +1,9 @@
 package com.cttic.liugw.expression.aviator;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -99,7 +103,7 @@ public class AviatorTest {
         System.out.println(length);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         testNumberExpr();
 
         /**
@@ -109,6 +113,8 @@ public class AviatorTest {
         AviatorEvaluator.execute("println('hello Helen'); 1+2+3 ; 100-1");
         newAviatorExeInstance.execute("print('hello Helen'); 1+2+3 ; 100-1");
         newAviatorExeInstance.execute("println()");
+
+
 
         testVariable(); // 带变量的表达式
 

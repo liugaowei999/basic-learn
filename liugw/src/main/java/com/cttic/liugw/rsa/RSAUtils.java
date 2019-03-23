@@ -183,7 +183,7 @@ public class RSAUtils {
             return null;
         }
     }
-            
+
     /**
        * 使用模和指数生成RSA私钥
        * /None/NoPadding
@@ -204,7 +204,7 @@ public class RSAUtils {
             return null;
         }
     }
-            
+
     /**
     * 公钥加密
     *
@@ -228,7 +228,7 @@ public class RSAUtils {
         }
         return mi;
     }
-            
+
     /**
     * 私钥解密
     *
@@ -382,8 +382,14 @@ public class RSAUtils {
         String modulusTest = "140818775880179456735499612118157859591361160885417623895217041812802788503622260595944026866769452834744072787267796332806989928511526839613671224104155465540308469931613141183319266223238312609833822262448759682275729766715183818992927745854853590923759495525497716042200061484836563697656414270095041837433";
         // 根据私钥指数和模获取私钥
         RSAPrivateKey priKeyTest = RSAUtils.getPrivateKey(modulusTest, private_exponentTest);
+
         // 使用私钥对密文解密获得明文
         String mingWenTest = RSAUtils.decryptByPrivateKey(miWenTestStr, priKeyTest);
+        System.out.println("解密后的明文：" + mingWenTest);
+
+
+        String miwen = "LRIvUBaBgQkcxxK4Q0lls1gx33GU5yEYkeND/5A/fOHo7m/PR4lmIUOgQEkJj6jMhnIudNgJN4lgpdPe6Rqo5k/fYlPGET9CiALWafN5SKLp6PNT9LTAI5DUKQkaca6jlGmF3zhtPgsgx1sxgSZi7F8sCWbfXarMPq4gT+P8UqQ=";
+        mingWenTest = RSAUtils.decryptByPrivateKey(miWenTestStr, priKeyTest);
         System.out.println("解密后的明文：" + mingWenTest);
 
     }
