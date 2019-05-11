@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d865ab3-1e0b-403b-9097-ab0ba93f30e4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liugw.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liugw.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/expression/aviator/AviatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/expression/aviator/AviatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test1/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test1/Bird.java" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path=".settings/" />
@@ -30,11 +27,11 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RSAUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java">
+      <file leaf-file-name="MaxWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="384" selection-start-line="384" selection-end-line="384" />
+            <state relative-caret-position="458">
+              <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -60,6 +57,7 @@
         <option value="$PROJECT_DIR$/src/main/java/test1/Bird.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/expression/aviator/AviatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" />
       </list>
     </option>
   </component>
@@ -96,7 +94,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -139,20 +137,7 @@
               <item name="liugw" type="b2602c69:ProjectViewProjectNode" />
               <item name="liugw" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="liugw" type="b2602c69:ProjectViewProjectNode" />
-              <item name="liugw" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="liugw" type="b2602c69:ProjectViewProjectNode" />
-              <item name="liugw" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="liugw" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -160,9 +145,10 @@
               <item name="liugw" type="b2602c69:ProjectViewProjectNode" />
               <item name="liugw" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mongodb" type="462c0819:PsiDirectoryNode" />
+              <item name="liugw" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Bird">
+  <component name="RunManager" selected="Application.MaxWindow">
     <configuration name="Bird" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test1.Bird" />
       <module name="liugw" />
@@ -213,6 +199,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.cttic.liugw.ordinary.classjudge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="MaxWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cttic.liugw.algorithm.MaxWindow" />
+      <module name="liugw" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cttic.liugw.algorithm.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -261,9 +258,11 @@
     <list>
       <item itemvalue="Application.ClassAssignableFromTest" />
       <item itemvalue="Application.Bird" />
+      <item itemvalue="Application.MaxWindow" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MaxWindow" />
         <item itemvalue="Application.Bird" />
         <item itemvalue="Application.ClassAssignableFromTest" />
       </list>
@@ -291,18 +290,28 @@
       <workItem from="1551088401418" duration="599000" />
       <workItem from="1552627138523" duration="122000" />
       <workItem from="1553048845344" duration="2609000" />
+      <workItem from="1553351592338" duration="233000" />
+      <workItem from="1557553746790" duration="3933000" />
     </task>
+    <task id="LOCAL-00001" summary="RSA">
+      <created>1553351783367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553351783367</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15089000" />
+    <option name="totallyTimeSpent" value="19255000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32827735" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -310,12 +319,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21343446" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27025586" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2761194" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -325,7 +334,6 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -338,7 +346,25 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="RSA" />
+    <option name="LAST_COMMIT_MESSAGE" value="RSA" />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8162">
+          <caret line="384" selection-start-line="384" selection-end-line="384" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/expression/aviator/AviatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2376">
@@ -488,8 +514,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="384" selection-start-line="384" selection-end-line="384" />
+        <state relative-caret-position="330">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.8.0_91/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="770" column="13" selection-start-line="770" selection-start-column="13" selection-end-line="770" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
         </state>
       </provider>
     </entry>
