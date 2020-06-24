@@ -2,28 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d865ab3-1e0b-403b-9097-ab0ba93f30e4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/SecureRandom/SecureRandomTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/tmp/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/trietree/TrieTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/trietree/TrieTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/Math.g4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/Math.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/Math.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathBaseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathBaseVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathLexer.interp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathLexer.tokens" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/test/Math.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/test/MathVisitorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/train/DataProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/train/TrainData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liugw.iml" beforeDir="false" afterPath="$PROJECT_DIR$/liugw.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" afterDir="false" />
     </list>
     <ignored path=".idea/" />
@@ -48,11 +26,11 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/tmp/Test1.java">
+      <file leaf-file-name="MaxWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+            <state relative-caret-position="309">
+              <caret line="164" column="17" selection-start-line="164" selection-start-column="17" selection-end-line="164" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -78,7 +56,6 @@
         <option value="$PROJECT_DIR$/src/main/java/test1/Bird.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/expression/aviator/AviatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/rsa/RSAUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/Math.g4" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/antlr/gen/MathVisitor.java" />
@@ -95,6 +72,7 @@
         <option value="$PROJECT_DIR$/src/main/java/train/DataProcess.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/SecureRandom/SecureRandomTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/tmp/Test1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java" />
       </list>
     </option>
   </component>
@@ -142,6 +120,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -208,8 +188,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,6 +370,7 @@
       <workItem from="1590130284113" duration="1104000" />
       <workItem from="1592196042751" duration="5449000" />
       <workItem from="1592273253652" duration="593000" />
+      <workItem from="1592977268066" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="RSA">
       <created>1553351783367</created>
@@ -407,14 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557559925039</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="maxWindow">
+      <created>1592977317043</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592977317043</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63872000" />
+    <option name="totallyTimeSpent" value="64132000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -426,21 +412,21 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3280142" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24333064" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="ANTLR Preview" order="7" weight="0.4539007" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -820,23 +806,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="24" column="69" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/tmp/Test1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+        <state relative-caret-position="304">
+          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cttic/liugw/algorithm/MaxWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="164" column="17" selection-start-line="164" selection-start-column="17" selection-end-line="164" selection-end-column="17" />
         </state>
       </provider>
     </entry>

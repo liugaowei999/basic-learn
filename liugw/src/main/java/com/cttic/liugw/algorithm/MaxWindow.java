@@ -135,7 +135,7 @@ public class MaxWindow {
 //        func(ss);
 //        System.out.println(ss);
 
-        for (int i=0; i<arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + ",");
 //        LinkedList<Integer> qmax = new LinkedList<>();
 //        qmax.addLast(1);
@@ -144,36 +144,37 @@ public class MaxWindow {
 //        System.out.println(qmax);
 //        System.out.println(qmax.pollFirst());
 //        System.out.println(qmax);
-        int widowSize = 3;
-        int printSize = 50;
-        for (int hot=0; hot<0; hot++) {
-            getMaxWindow(arr, widowSize);
-            getMaxWindowVersion2(arr, widowSize);
-        }
-        long begin = System.currentTimeMillis();
-        int[] maxWindow = getMaxWindow(arr, widowSize);
-        long end = System.currentTimeMillis();
-        for (int i=0; i<printSize; i++) {
-            System.out.print(maxWindow[i] + ",");
-        }
-        System.out.println();
-        System.out.println("-------------------------------------------- consume:" + (end-begin));
+            int widowSize = 3;
+            int printSize = 50;
+            for (int hot = 0; hot < 0; hot++) {
+                getMaxWindow(arr, widowSize);
+                getMaxWindowVersion2(arr, widowSize);
+            }
+            long begin = System.currentTimeMillis();
+            int[] maxWindow = getMaxWindow(arr, widowSize);
+            long end = System.currentTimeMillis();
+            for (i = 0; i < printSize; i++) {
+                System.out.print(maxWindow[i] + ",");
+            }
+            System.out.println();
+            System.out.println("-------------------------------------------- consume:" + (end - begin));
 
-        begin = System.currentTimeMillis();
-        int[] maxWindow2 = getMaxWindowVersion2(arr, widowSize);
-        end = System.currentTimeMillis();
-        for (int i=0; i<printSize; i++) {
-            System.out.print(maxWindow2[i] + ",");
-        }
-        System.out.println();
-        System.out.println("-------------------------------------------- consume:" + (end-begin));
+            begin = System.currentTimeMillis();
+            int[] maxWindow2 = getMaxWindowVersion2(arr, widowSize);
+            end = System.currentTimeMillis();
+            for ( i = 0; i < printSize; i++) {
+                System.out.print(maxWindow2[i] + ",");
+            }
+            System.out.println();
+            System.out.println("-------------------------------------------- consume:" + (end - begin));
 
-        int a = 5;
-        if (a<=5 ) {
-            System.out.println("aaaa");
-        } else if (a<6) {
-            System.out.println("bbb");
-        }
+            int a = 5;
+            if (a <= 5) {
+                System.out.println("aaaa");
+            } else if (a < 6) {
+                System.out.println("bbb");
+            }
 
+        }
     }
 }
