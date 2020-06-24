@@ -31,8 +31,33 @@ public class MaxWindow {
         return result;
     }
 
-    public static void main(String[] args) {
+    static String s = "hello";
+    static StringBuilder ss = new StringBuilder("hello");
 
+    static void func(String ss) {
+        ss = "world";
+//        System.out.println("--+ " + ss.hashCode());
+//        System.out.println(ss);
+//        System.out.println("--+ " + s.hashCode());
+    }
+
+    static void func(StringBuilder ss) {
+        ss.append("world");
+    }
+
+
+
+    public static void main(String[] args) {
+//        System.out.println(s.hashCode());
+        func(s);
+//        System.out.println(s);
+
+        String s1 = new String("aaa");
+        func(s1);
+        System.out.println(s1);
+
+//        func(ss);
+//        System.out.println(ss);
 
         for (int i=0; i<arr.length; i++) {
             System.out.print(arr[i] + ",");
@@ -52,6 +77,13 @@ public class MaxWindow {
             System.out.print(maxWindow[i] + ",");
         }
         System.out.println();
+
+        int a = 5;
+        if (a<=5 ) {
+            System.out.println("aaaa");
+        } else if (a<6) {
+            System.out.println("bbb");
+        }
 
     }
 }

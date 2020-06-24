@@ -21,13 +21,13 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    
+
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
         <version>0.10.1.0</version>
     </dependency>
-    
+
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
@@ -43,7 +43,7 @@
         <artifactId>log4j</artifactId>
         <version>1.2.16</version>
     </dependency>
-    
+
     <!-- 日志相关依赖 -->
      <dependency>
          <groupId>org.slf4j</groupId>
@@ -66,14 +66,14 @@
         <artifactId>kafka-streams</artifactId>
         <version>0.10.0.0</version>
     </dependency>
-    
-    <dependency>  
-      <groupId>commons-lang</groupId>  
-      <artifactId>commons-lang</artifactId>  
-      <version>2.6</version>  
-      <scope>provided</scope>  
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+      <scope>provided</scope>
     </dependency>
-    
+
     <dependency>
         <groupId>cglib</groupId>
         <artifactId>cglib</artifactId>
@@ -96,7 +96,7 @@
         <artifactId>zookeeper</artifactId>
         <version>3.4.6</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
     <dependency>
         <groupId>org.apache.activemq</groupId>
@@ -110,7 +110,7 @@
         <artifactId>javax.jms-api</artifactId>
         <version>2.0.1</version>
     </dependency>
-    
+
     <!-- 解决Maven 打包时找不到 tools.jar 的问题 -->
     <dependency>
 	    <groupId>jdk.tools</groupId>
@@ -126,7 +126,7 @@
         <artifactId>netty-all</artifactId>
         <version>4.1.16.Final</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
     <!-- <dependency>
         <groupId>org.apache.poi</groupId>
@@ -162,28 +162,28 @@
         <artifactId>itextpdf</artifactId>
         <version>5.5.6</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/com.itextpdf/itext-asian -->
     <dependency>
         <groupId>com.itextpdf</groupId>
         <artifactId>itext-asian</artifactId>
         <version>5.2.0</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/javax.xml.stream/stax-api -->
     <dependency>
         <groupId>javax.xml.stream</groupId>
         <artifactId>stax-api</artifactId>
         <version>1.0-2</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
     <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>3.7</version>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
     <dependency>
         <groupId>commons-collections</groupId>
@@ -233,34 +233,34 @@
         <artifactId>lucene-queryparser</artifactId>
         <version>7.3.0</version>
     </dependency>
-    
-    
+
+
     <!-- Java 防盗版，证书认证 开始-->
     <!-- https://blog.csdn.net/lee272616/article/details/55057311 -->
-    <!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-core -->  
-	<dependency>  
-	    <groupId>de.schlichtherle.truelicense</groupId>  
-	    <artifactId>truelicense-core</artifactId>  
-	    <version>1.33</version>  
-	</dependency>  
-	<!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-xml -->  
-	<dependency>  
-	    <groupId>de.schlichtherle.truelicense</groupId>  
-	    <artifactId>truelicense-xml</artifactId>  
-	    <version>1.33</version>  
-	</dependency>  
-	<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->  
-	<dependency>  
-	    <groupId>commons-codec</groupId>  
-	    <artifactId>commons-codec</artifactId>  
-	    <version>1.10</version>  
-	</dependency>  
-	<!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-swing -->  
-	<dependency>  
-	    <groupId>de.schlichtherle.truelicense</groupId>  
-	    <artifactId>truelicense-swing</artifactId>  
-	    <version>1.33</version>  
-	</dependency>  
+    <!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-core -->
+	<dependency>
+	    <groupId>de.schlichtherle.truelicense</groupId>
+	    <artifactId>truelicense-core</artifactId>
+	    <version>1.33</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-xml -->
+	<dependency>
+	    <groupId>de.schlichtherle.truelicense</groupId>
+	    <artifactId>truelicense-xml</artifactId>
+	    <version>1.33</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+	<dependency>
+	    <groupId>commons-codec</groupId>
+	    <artifactId>commons-codec</artifactId>
+	    <version>1.10</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/de.schlichtherle.truelicense/truelicense-swing -->
+	<dependency>
+	    <groupId>de.schlichtherle.truelicense</groupId>
+	    <artifactId>truelicense-swing</artifactId>
+	    <version>1.33</version>
+	</dependency>
 	<!-- Java 防盗版，证书认证 结束-->
 
       <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
@@ -277,15 +277,15 @@
 	    <artifactId>asm</artifactId>
 	    <version>6.1</version>
 	</dependency>
-	
+
 	<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-all -->
 	<dependency>
 	    <groupId>org.ow2.asm</groupId>
 	    <artifactId>asm-all</artifactId>
 	    <version>5.2</version>
 	</dependency>
-	
-	<!-- 一个表达式计算的开源包， 自动将表达式转化为字节码让JVM执行 
+
+	<!-- 一个表达式计算的开源包， 自动将表达式转化为字节码让JVM执行
 	     aviator 4.0 开始支持 以分号分割的多行表达式
 	-->
 	<!-- https://mvnrepository.com/artifact/com.googlecode.aviator/aviator -->
@@ -300,7 +300,7 @@
 	    <artifactId>aviator</artifactId>
 	    <version>4.0.0-RC</version>
 	</dependency>
-	
+
     <!-- mongodb 原生API -->
     <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
     <dependency>
@@ -361,6 +361,21 @@
         <artifactId>spring-aop</artifactId>
         <version>4.3.13.RELEASE</version>
     </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.antlr/antlr4-runtime -->
+      <dependency>
+          <groupId>org.antlr</groupId>
+          <artifactId>antlr4-runtime</artifactId>
+          <version>4.7.2</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.antlr/antlr4 -->
+      <dependency>
+          <groupId>org.antlr</groupId>
+          <artifactId>antlr4</artifactId>
+          <version>4.7.2</version>
+      </dependency>
+
 
 
   </dependencies>
