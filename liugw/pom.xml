@@ -267,7 +267,7 @@
       <dependency>
           <groupId>org.bouncycastle</groupId>
           <artifactId>bcprov-jdk15on</artifactId>
-          <version>1.60</version>
+          <version>1.67</version>
       </dependency>
 
 	<!-- 字节码操作 ASM工具包 asm-all包没有6.1 -->
